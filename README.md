@@ -9,7 +9,7 @@ We have a jupyter notebook in the notebook folder, check it out if you are inter
 
 ## How to run
 
-'''
+```
 python VAC.py -i INPUT -o OUTPUT [-s SHAPE SHAPE] [-m MAX_ITER] [-p PROTOTYPE] [-d DITHER] 
     -i INPUT, --input INPUT
         input image path
@@ -23,11 +23,11 @@ python VAC.py -i INPUT -o OUTPUT [-s SHAPE SHAPE] [-m MAX_ITER] [-p PROTOTYPE] [
         path to initial prototype binary pattern
     -d DITHER, --dither DITHER
         path to dither matirx
-'''
+```
 
 
 example
-'''
+```
 # Start from scratch
 python VAC.py -i ./test/test1.jpg -o OUTPUT test1_ht.jpg -s 120 165
 
@@ -36,7 +36,7 @@ python VAC.py -i ./test/test1.jpg -o OUTPUT test1_ht.jpg -s 120 165 -p ./test/te
 
 # Generate halftone image with given dither array
 python VAC.py -i ./test/test1.jpg -o OUTPUT test1_ht.jpg -s 120 165 -d ./test/test1_ht.jpg.dither.png
-'''
+```
 
 ## Built With
 
