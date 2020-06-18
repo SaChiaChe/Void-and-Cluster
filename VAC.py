@@ -42,12 +42,6 @@ def show_image(img, title=None):
     plt.imshow(img, cmap='gray')
     plt.show()
 
-def gaussian_kernel(kernel_size=9, sigma=1.5, mean=0.0):
-    ax = np.linspace(-(kernel_size - 1) / 2., (kernel_size - 1) / 2., kernel_size)
-    xx, yy = np.meshgrid(ax, ax)
-    kernel = np.exp(-0.5 * (np.square(xx) + np.square(yy)) / np.square(sigma))
-    return kernel / np.sum(kernel)
-
 class void_and_cluster():
     def __init__(self, init=None, shape=None, kernel=None, max_iter=100000, prototype=None, dither_matrix=None, verbose=1):
         timer = clock()
@@ -221,9 +215,13 @@ if __name__ == "__main__":
             save_image(args.output+".dither.png", vac.dither_matrix)
         else:
             # Initial prototype binary pattern in provided
-            # directly run operation 2 
+            # directly run operation 2
+            assert(list(args.shape) == list(prototype.shape)), "Given shape doesn't match given prototype shape"
+
             vac.run_operation_2()
             save_image(args.output+".dither.png", vac.dither_matrix)
+    else:
+        assert(list(args.shape) == list(dither_matrix.shape)), "Given shape doesn't match given dither matrix shape"
 
     # Generate halftone image
     halftone_img = vac.halftone(img)

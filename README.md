@@ -29,13 +29,13 @@ python VAC.py -i INPUT -o OUTPUT [-s SHAPE SHAPE] [-m MAX_ITER] [-p PROTOTYPE] [
 example
 ```
 # Start from scratch
-python VAC.py -i ./test/test1.jpg -o OUTPUT test1_ht.jpg -s 120 165
+python VAC.py -i ./test/test1.jpg -o test1_ht.jpg -s 120 165
 
 # Start the void-and cluster algorithm from a given initial prototype binary pattern
-python VAC.py -i ./test/test1.jpg -o OUTPUT test1_ht.jpg -s 120 165 -p ./test/test1_ht.jpg.prototype.png
+python VAC.py -i ./test/test1.jpg -o ./test/test1_ht.jpg -s 120 165 -p ./test/test1_ht.jpg.prototype.png
 
 # Generate halftone image with given dither array
-python VAC.py -i ./test/test1.jpg -o OUTPUT test1_ht.jpg -s 120 165 -d ./test/test1_ht.jpg.dither.png
+python VAC.py -i ./test/test1.jpg -o ./test/test1_ht.jpg -s 120 165 -d ./test/test1_ht.jpg.dither.png
 ```
 
 ## Built With
